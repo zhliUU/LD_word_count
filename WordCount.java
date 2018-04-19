@@ -11,14 +11,6 @@ public class WordCount {
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
-        // private boolean caseSensitive = false;
-
-        protected void setup(Mapper.Context context)
-          throws IOException,
-          InterruptedException {
-            Configuration config = context.getConfiguration();
-            // this.caseSensitive = config.getBoolean("wordcount.case.sensitive", false);
-          }
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             String line = value.toString().toLowerCase();
