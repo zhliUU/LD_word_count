@@ -22,11 +22,11 @@ public class WordCount {
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             String line = value.toString().toLowerCase();
-            char line = line.charAT(0);
+            // char line = line.charAT(0);
             // line = line.toLowerCase();
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
-                word.set(tokenizer.nextToken());
+                word.set(tokenizer.nextToken().charAT(0));
                 output.collect(word, one);
             }
         }
