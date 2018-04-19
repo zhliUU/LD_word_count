@@ -21,7 +21,7 @@ public class WordCount {
           }
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
-            String line = value.toString();
+            String line = value.toString().toLowerCase();
             // System.out.println(line);
             // char line = line.charAt(0);
             // line = line.toLowerCase().substring(0, 1);
