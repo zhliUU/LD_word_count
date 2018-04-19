@@ -17,7 +17,7 @@ public class WordCount {
           throws IOException,
           InterruptedException {
             Configuration config = context.getConfiguration();
-            this.caseSensitive = config.getBoolean("wordcount.case.sensitive", false);
+            // this.caseSensitive = config.getBoolean("wordcount.case.sensitive", false);
           }
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
