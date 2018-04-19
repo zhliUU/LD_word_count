@@ -11,7 +11,7 @@ public class WordCount {
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
-        private boolean caseSensitive = false;
+        // private boolean caseSensitive = false;
 
         protected void setup(Mapper.Context context)
           throws IOException,
@@ -21,9 +21,9 @@ public class WordCount {
           }
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
-            String line = value.toString();
-
-            line = line.toLowerCase().charAT();
+            String line = value.toString().toLowerCase();
+            
+            // line = line.toLowerCase();
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
                 word.set(tokenizer.nextToken());
