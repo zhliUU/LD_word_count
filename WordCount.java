@@ -19,7 +19,7 @@ public class WordCount {
             // line = line.toLowerCase().substring(0, 1);
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
-                word.set(tokenizer.nextToken());
+                word.set(tokenizer.nextToken().substring(0, 1));
                 output.collect(word, one);
             }
         }
