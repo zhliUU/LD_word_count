@@ -14,9 +14,12 @@ public class WordCount {
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             String line = value.toString();
+            // System.out.println(line);
+            // char line = line.charAt(0);
+            // line = line.toLowerCase().substring(0, 1);
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
-                word.set(tokenizer.nextToken().substring(0,1).toLowerCase());
+                word.set(tokenizer.nextToken().substring(0, 1).toLowerCase());
                 output.collect(word, one);
             }
         }
