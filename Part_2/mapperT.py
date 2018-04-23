@@ -5,5 +5,6 @@ import sys
 import json
 
 # input comes from STDIN (standard input) load into json
-data = json.load(sys.stdin)
-print (data["text"])
+for line in sys.stdin:
+    data = json.load(line)
+    print (data["text"])
